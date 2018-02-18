@@ -6,15 +6,30 @@
       </button>
     </ion-buttons>
     <ion-title text-center>
-      Segmentering
+      <p>Segmentering</p>
     </ion-title>
     <ion-buttons right>
       <button ion-button icon-only>
-        Nulstil
+        <p>Nulstil</p>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      <p class="categories-title">Kategorier</p>
+      <ion-row>
+        <ion-col *ngFor="let tagKey of tagKeys">
+          <tag [title]="tags[tagKey].title"></tag>
+        </ion-col>
+      </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>
