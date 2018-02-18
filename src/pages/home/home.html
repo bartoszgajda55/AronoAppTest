@@ -18,18 +18,15 @@
 
 <ion-content padding>
   <ion-grid>
-    <ion-row>
+    <ion-row *ngFor="let i of tagGroups | getKeys">
       <ion-col>
-      <p class="categories-title">Kategorier</p>
-      <ion-row>
-        <ion-col *ngFor="let tagKey of tagKeys">
-          <tag [title]="tags[tagKey].title"></tag>
-        </ion-col>
-      </ion-row>
+        <p class="categories-title">{{tagGroups[i]._heading}}</p>
+        <ion-row>
+          <ion-col *ngFor="let j of tagGroups[i]._tags | getKeys">
+            <tag [name]="tagGroups[i]._tags[j]._name"></tag>
+          </ion-col>
+        </ion-row>
       </ion-col>
-    </ion-row>
-    <ion-row>
-
     </ion-row>
   </ion-grid>
 </ion-content>

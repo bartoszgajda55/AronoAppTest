@@ -5,16 +5,13 @@ import {Component, Input} from '@angular/core';
   templateUrl: 'tag.html'
 })
 export class TagComponent {
-  @Input('title') _title;
-  @Input('isSelected') _isSelected;
+  @Input('name') _name;
 
-  title: string;
-  isSelected: boolean;
+  name: string;
 
   constructor() { }
 
   ngOnInit() {
-    this.title = this._title;
-    this.isSelected = this._isSelected;
+    this.name = this._name;
   }
 }

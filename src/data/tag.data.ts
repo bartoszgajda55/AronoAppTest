@@ -1,26 +1,60 @@
 export default [
   {
-    title: 'Vegansk',
-    is_selected: false
+    _heading: 'Category 1',
+    _tags: [
+      {
+        _id: 0,
+        _name: 'Vegansk',
+      },
+      {
+        _id: 1,
+        _name: '5-15 min.',
+      },
+      {
+        _id: 2,
+        _name: 'Smoothie',
+      },
+      {
+        _id: 3,
+        _name: 'Proteinrig',
+      },
+      {
+        _id: 4,
+        _name: 'Laktosefri',
+      },
+      {
+        _id: 5,
+        _name: 'Frugt',
+      },
+    ]
   },
   {
-    title: '5-15 min.',
-    is_selected: false
-  },
-  {
-    title: 'Smoothie',
-    is_selected: false
-  },
-  {
-    title: 'Proteinrig',
-    is_selected: false
-  },
-  {
-    title: 'Laktosefri',
-    is_selected: false
-  },
-  {
-    title: 'Frugt',
-    is_selected: false
-  },
+    _heading: 'Category 2',
+    _tags: [
+      {
+        _id: 0,
+        _name: 'Vegansk',
+      },
+      {
+        _id: 1,
+        _name: '5-15 min.',
+      },
+      {
+        _id: 2,
+        _name: 'Smoothie',
+      },
+      {
+        _id: 3,
+        _name: 'Proteinrig',
+      },
+      {
+        _id: 4,
+        _name: 'Laktosefri',
+      },
+      {
+        _id: 5,
+        _name: 'Frugt',
+      },
+    ]
+  }
 ]

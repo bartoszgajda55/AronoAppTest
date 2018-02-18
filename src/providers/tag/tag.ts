@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import {Tag} from "../../models/tag.model";
 import tags from "../../data/tag.data";
+import {TagGroup} from "../../models/tag-group.model";
 
 @Injectable()
 export class TagProvider {
-  private tags: Tag[];
+  private tagGroups: TagGroup[];
 
   constructor() {
-    this.tags = tags;
+    this.tagGroups = tags;
   }
 
-  getTags(): Tag[] {
-   return this.tags.slice();
+  getTags(): TagGroup[] {
+   return this.tagGroups.slice();
   }
 }

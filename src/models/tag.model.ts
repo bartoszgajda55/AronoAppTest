@@ -1,22 +1,22 @@
 export class Tag {
     constructor(
-      public _title: string,
-      public _is_selected: boolean
+      public _id: number,
+      public _name: string
     ) {}
 
-  public get title(): string {
-    return this._title;
+  public get id(): number {
+    return this._id;
   }
 
-  public set title(value: string) {
-    this._title = value;
+  public set id(value: number) {
+    this._id = value;
   }
 
-  public get is_selected(): boolean {
-    return this._is_selected;
+  public get name(): string {
+    return this._name;
   }
 
-  public set is_selected(value: boolean) {
-    this._is_selected = value;
+  public set name(value: string) {
+    this._name = value;
   }
 }
