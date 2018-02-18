@@ -23,7 +23,10 @@
         <p class="categories-title">{{tagGroups[i]._heading}}</p>
         <ion-row>
           <ion-col class="column">
-            <div class="tag-container" *ngFor="let j of tagGroups[i]._tags | getKeys">
+            <div
+              class="tag-container"
+              *ngFor="let j of tagGroups[i]._tags | getKeys"
+              (click)="selectTag(i, j)">
               <tag [name]="tagGroups[i]._tags[j]._name"></tag>
             </div>
           </ion-col>
@@ -32,3 +35,16 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="white">
+      <div
+        class="tag-container-footer"
+        *ngFor="let tag of selectedTags">
+        <tag [name]="tag._name"></tag>
+      </div>
+      <ion-buttons end>
+        <button ion-button color="primary">VIS</button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

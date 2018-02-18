@@ -6,10 +6,7 @@ import {Component, Input} from '@angular/core';
 })
 export class TagComponent {
   @Input('name') _name;
-
   name: string;
-
-  constructor() { }
 
   ngOnInit() {
     this.name = this._name;
