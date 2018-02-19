@@ -7,7 +7,7 @@ export class TagProvider {
   private tagGroups: TagGroup[];
 
   constructor() {
-    this.tagGroups = tags;
+    this.tagGroups = <TagGroup[]>tags;
   }
 
   getTags(): TagGroup[] {

@@ -37,14 +37,23 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar color="white">
-      <div
-        class="tag-container-footer"
-        *ngFor="let tag of selectedTags">
-        <tag [name]="tag._name"></tag>
-      </div>
-      <ion-buttons end>
-        <button ion-button color="primary">VIS</button>
-      </ion-buttons>
+  <ion-toolbar color="white" class="tag-container-footer">
+    <ion-grid>
+      <ion-row class="footer-row">
+        <ion-col col-10 class="footer-col">
+          <div
+            class="tag-container"
+            *ngFor="let tag of selectedTags"
+            (click)="removeSelectedTag(tag)">
+            <tag [name]="tag._name"></tag>
+          </div>
+        </ion-col>
+        <ion-col col-2>
+          <ion-buttons end>
+            <button ion-button outline color="main">VIS</button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-footer>

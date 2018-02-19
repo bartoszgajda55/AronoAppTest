@@ -9,12 +9,15 @@ page-home {
     display: inline-block;
   }
   .tag-container-footer {
-    display: inline-block;
+    overflow-y: scroll;
   }
   .column {
     padding: 0;
   }
-  ion-footer {
-
+  .footer-row {
+    height: 50px;
+  }
+  .footer-col {
+    overflow-y: scroll;
   }
 }

@@ -20,6 +20,10 @@ export class HomePage {
 
   selectTag(group: number, tag: number): void {
     this.selectedTags.push(this.tagGroups[group]._tags[tag]);
-    console.log(this.selectedTags);
+  }
+
+  removeSelectedTag(tag: Tag): void {
+    let arrayElId = this.selectedTags.indexOf(tag);
+    this.selectedTags.splice(arrayElId, 1);
   }
 }
