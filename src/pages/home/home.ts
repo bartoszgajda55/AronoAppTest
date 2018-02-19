@@ -26,4 +26,8 @@ export class HomePage {
     let arrayElId = this.selectedTags.indexOf(tag);
     this.selectedTags.splice(arrayElId, 1);
   }
+
+  isTagInSelected(tag: Tag): boolean {
+    return this.selectedTags.indexOf(tag) !== -1;
+  }
 }

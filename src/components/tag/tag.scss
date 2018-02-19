@@ -13,4 +13,7 @@ tag {
       margin-left: 5px;
     }
   }
+  .selected {
+    border-left: 3px solid color($colors, main);
+  }
 }

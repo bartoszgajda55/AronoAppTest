@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [ngClass]="{'selected':isSelected && !isToolbar}">
   {{name}}
-  <ion-icon class="close-icon" name="close" *ngIf="isToolbar"></ion-icon>
+  <ion-icon class="close-icon" name="close" *ngIf="isSelected"></ion-icon>
 </div>

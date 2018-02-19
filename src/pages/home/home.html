@@ -29,6 +29,7 @@
               (click)="selectTag(i, j)">
               <tag
                 [name]="tagGroups[i]._tags[j]._name"
+                [isSelected]="isTagInSelected(tagGroups[i]._tags[j])"
                 [isToolbar]="false"
               ></tag>
             </div>
@@ -50,6 +51,7 @@
             (click)="removeSelectedTag(tag)">
             <tag
               [name]="tag._name"
+              [isSelected]="isTagInSelected(tag)"
               [isToolbar]="true"></tag>
           </div>
         </ion-col>
