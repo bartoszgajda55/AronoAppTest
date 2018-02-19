@@ -6,9 +6,12 @@ import {Component, Input} from '@angular/core';
 })
 export class TagComponent {
   @Input('name') _name;
+  @Input('isToolbar') _isToolbar;
   name: string;
+  isToolbar: boolean;
 
   ngOnInit() {
     this.name = this._name;
+    this.isToolbar = this._isToolbar;
   }
 }

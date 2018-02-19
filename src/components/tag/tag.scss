@@ -5,10 +5,12 @@ tag {
     border-radius: 5px;
     padding: 5px 5px;
     margin: 5px 5px;
-
     p {
       margin: 0 auto;
       font-size: 1.4rem;
+    }
+    .close-icon {
+      margin-left: 5px;
     }
   }
 }
