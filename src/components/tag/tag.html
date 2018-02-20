@@ -1,4 +1,17 @@
-<div class="container" [ngClass]="{'selected':isSelected && !isToolbar}">
-  {{name}}
-  <ion-icon class="close-icon" name="close" *ngIf="isSelected"></ion-icon>
+<div *ngIf="isToolbar; else noToolbar">
+  <div class="container">
+    {{name}}
+    <ion-icon
+      class="close-icon"
+      name="close"
+      (click)="removeFromSelected()"></ion-icon>
+  </div>
 </div>
+<ng-template #noToolbar>
+  <div
+    class="container"
+    [ngClass]="{'selected': isSelected(), 'unselected': !isSelected()}"
+    (click)="addToSelected()">
+    {{name}}
+  </div>
+</ng-template>

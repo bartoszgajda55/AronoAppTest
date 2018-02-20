@@ -16,18 +16,10 @@ export class HomePage {
 
   ionViewDidLoad() {
     this.tagGroups = this.tagProvider.getTags();
+    this.selectedTags = this.tagProvider.getSelectedTags();
   }
 
-  selectTag(group: number, tag: number): void {
-    this.selectedTags.push(this.tagGroups[group]._tags[tag]);
-  }
-
-  removeSelectedTag(tag: Tag): void {
-    let arrayElId = this.selectedTags.indexOf(tag);
-    this.selectedTags.splice(arrayElId, 1);
-  }
-
-  isTagInSelected(tag: Tag): boolean {
-    return this.selectedTags.indexOf(tag) !== -1;
+  updateData(): void {
+    this.selectedTags = this.tagProvider.getSelectedTags();
   }
 }

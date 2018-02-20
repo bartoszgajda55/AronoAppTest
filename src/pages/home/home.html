@@ -26,10 +26,9 @@
             <div
               class="tag-container"
               *ngFor="let j of tagGroups[i]._tags | getKeys"
-              (click)="selectTag(i, j)">
+              (click)="updateData()">
               <tag
-                [name]="tagGroups[i]._tags[j]._name"
-                [isSelected]="isTagInSelected(tagGroups[i]._tags[j])"
+                [tag]="tagGroups[i]._tags[j]"
                 [isToolbar]="false"
               ></tag>
             </div>
@@ -48,10 +47,9 @@
           <div
             class="tag-container"
             *ngFor="let tag of selectedTags"
-            (click)="removeSelectedTag(tag)">
+            (click)="updateData()">
             <tag
-              [name]="tag._name"
-              [isSelected]="isTagInSelected(tag)"
+              [tag]="tag"
               [isToolbar]="true"></tag>
           </div>
         </ion-col>
