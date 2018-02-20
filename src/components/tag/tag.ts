@@ -18,7 +18,7 @@ export class TagComponent {
 
   constructor(private tagProvider: TagProvider) {
     this.subscription = this.tagProvider.getRemovedTag().subscribe(tag => {
-      if (tag._id === this.tag._id) {
+      if (tag._id === this.tag._id || tag === 'all') {
         this.state = 'unselected';
       }
     });

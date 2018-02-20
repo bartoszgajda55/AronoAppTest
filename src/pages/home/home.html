@@ -9,8 +9,8 @@
       <p>Segmentering</p>
     </ion-title>
     <ion-buttons right>
-      <button ion-button icon-only>
-        <p>Nulstil</p>
+      <button ion-button icon-only (click)="clearAllTags()">
+        Nulstil
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -25,8 +25,7 @@
           <ion-col class="column">
             <div
               class="tag-container"
-              *ngFor="let j of tagGroups[i]._tags | getKeys"
-              (click)="updateData()">
+              *ngFor="let j of tagGroups[i]._tags | getKeys">
               <tag
                 [tag]="tagGroups[i]._tags[j]"
                 [isToolbar]="false"
@@ -41,22 +40,20 @@
 
 <ion-footer>
   <ion-toolbar color="white" class="tag-container-footer">
-    <ion-grid>
+    <ion-grid no-padding>
       <ion-row class="footer-row">
-        <ion-col col-10 class="footer-col">
+        <ion-col col-9 class="footer-col">
           <div
             class="tag-container"
             *ngFor="let tag of selectedTags"
-            (click)="updateData()">
+            (click)="loadData()">
             <tag
               [tag]="tag"
               [isToolbar]="true"></tag>
           </div>
         </ion-col>
-        <ion-col col-2>
-          <ion-buttons end>
-            <button ion-button outline color="main">VIS</button>
-          </ion-buttons>
+        <ion-col col-3>
+            <button block ion-button color="main" (click)="showSelectedTags()">VIS</button>
         </ion-col>
       </ion-row>
     </ion-grid>

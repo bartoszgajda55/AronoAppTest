@@ -15,11 +15,11 @@ export class TagProvider {
     this.tagGroups = <TagGroup[]>tags;
   }
 
-  sendTagRemoved(tag: Tag) {
+  sendTagRemoved(tag: any) {
     this.tagSubject.next(tag);
   }
 
-  getRemovedTag(): Observable<Tag> {
+  getRemovedTag(): Observable<any> {
     return this.tagSubject.asObservable();
   }
 
@@ -42,5 +42,9 @@ export class TagProvider {
 
   isTagInSelected(tag: Tag): boolean {
     return this.selectedTags.indexOf(tag) !== -1;
+  }
+
+  removeAllSelectedTags(): void {
+    this.selectedTags = [];
   }
 }
