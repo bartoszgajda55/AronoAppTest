@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Tag} from "../../models/tag.model";
 import {TagProvider} from "../../providers/tag/tag";
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'tag',
@@ -13,10 +14,19 @@ export class TagComponent {
   isToolbar: boolean;
   state: string = 'unselected';
   tag: Tag;
+  subscription: Subscription;
 
-  constructor(
-    private tagProvider: TagProvider
-  ) { }
+  constructor(private tagProvider: TagProvider) {
+    this.subscription = this.tagProvider.getRemovedTag().subscribe(tag => {
+      if (tag._id === this.tag._id) {
+        this.state = 'unselected';
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 
   ngOnInit() {
     this.tag = this._tag;
@@ -37,5 +47,6 @@ export class TagComponent {
 
   removeFromSelected(): void {
     this.tagProvider.removeTagFromSelected(this.tag);
+    this.tagProvider.sendTagRemoved(this.tag);
   }
 }
